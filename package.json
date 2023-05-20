@@ -7,21 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier . --write && eslint --fix . && prettier --write .",
     "lint-staged": "lint-staged",
-    "husky-install": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
+    "husky-install": "husky install",
+    "format": "prettier . --write && eslint --fix . && prettier --write .",
+    "prepare": "husky install",
+    "precommit": "yarn lint && yarn format && git add -A ."
   },
   "dependencies": {
     "autoprefixer": "10.4.14",

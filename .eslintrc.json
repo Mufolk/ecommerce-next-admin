@@ -1,3 +1,75 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:security/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["function-declaration", "arrow-function"]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "no-unused-expressions": "off",
+    "no-empty-function": "off",
+    "no-nested-ternary": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "no-console": 0,
+    "dot-notation": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }

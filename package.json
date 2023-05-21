@@ -11,10 +11,22 @@
     "husky-install": "husky install",
     "format": "prettier . --write && eslint --fix . && prettier --write .",
     "prepare": "husky install",
-    "precommit": "yarn lint && yarn format && git add -A ."
+    "precommit": "yarn format && yarn lint && git add -A ."
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "jest --bail --findRelatedTests"
+    ],
+    "*.{css,md,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
+    "@commitlint/config-conventional": "^17.6.3",
     "autoprefixer": "10.4.14",
+    "commitlint": "^17.6.3",
     "eslint": "8.41.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "13.4.3",

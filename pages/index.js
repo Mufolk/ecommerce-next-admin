@@ -19,7 +19,7 @@ export default function Component() {
         <div className="text-center w-full">
           <button
             type="button"
-            className="bg-white p-2 rounded-lg"
+            className="bg-white p-2 rounded-lg text-black"
             onClick={() => signIn()}
           >
             Login with Google

@@ -22,7 +22,7 @@ export default function Component() {
             className="bg-white p-2 rounded-lg"
             onClick={() => signIn()}
           >
-            aaaa Login with Google
+            Login with Google
           </button>
         </div>
       </div>

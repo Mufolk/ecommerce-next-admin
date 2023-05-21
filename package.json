@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "husky-install": "husky install",
-    "format": "prettier . --write && eslint --fix . && prettier --write .",
+    "format": "eslint --fix . && prettier --write .",
     "prepare": "husky install",
     "precommit": "yarn format && yarn lint && git add -A ."
   },

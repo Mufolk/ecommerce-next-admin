@@ -3,7 +3,6 @@ import { useSession } from "next-auth/react";
 import Home from "../pages/index";
 import "@testing-library/jest-dom";
 
-// mock session provider
 jest.mock("next-auth/react", () => ({
   useSession: jest.fn(),
 }));

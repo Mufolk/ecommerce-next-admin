@@ -55,7 +55,15 @@
       "ignorePackages",
       {
         "js": "never",
-        "jsx": "never"
+        "jsx": "never",
+        "mjs": "never",
+        "": "always"
+      }
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["^@/", "^component/"] // Ignore the unresolved path starting with "@/"
       }
     ],
     "no-unused-expressions": "off",

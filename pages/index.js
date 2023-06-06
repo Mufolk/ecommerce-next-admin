@@ -1,4 +1,4 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 // eslint-disable-next-line
 import { Nav } from "@/components/Nav";
 
@@ -9,12 +9,19 @@ export default function Component() {
   }
   if (session) {
     return (
-      <div className="bg-blue-900 min-h-screen">
+      <div className="bg-blue-900 min-h-screen flex">
         <Nav />
-        <div>Signed in as {session.user.email}</div>
-        <button type="button" onClick={() => signOut()}>
+        <div
+          className="bg-white text-black 
+                        flex-grow 
+                        mt-2 mr-2 mb-2 p-4 
+                        rounded-lg"
+        >
+          Logged in as {session.user.email}
+        </div>
+        {/* <button type="button" onClick={() => signOut()}>
           Sign out
-        </button>
+        </button> */}
       </div>
     );
   }

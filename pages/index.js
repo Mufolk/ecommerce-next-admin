@@ -1,6 +1,5 @@
 import { useSession, signIn } from "next-auth/react";
-// eslint-disable-next-line
-import { Nav } from "@/components/Nav";
+import { Nav } from "../components/Nav";
 
 export default function Component() {
   const { data: session } = useSession();

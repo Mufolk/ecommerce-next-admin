@@ -1,7 +1,7 @@
 // component rtl template
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Nav } from "./Nav";
+import Nav from "./Nav";
 
 describe("Nav", () => {
   it("renders without crashing", () => {

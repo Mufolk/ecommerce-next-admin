@@ -1,43 +1,25 @@
-import { useSession, signIn } from "next-auth/react";
-import { Nav } from "../components/Nav";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Layout from "../components/Layout/Layout";
 
 export default function Component() {
   const { data: session } = useSession();
-  if (typeof session === "undefined") {
-    return <div>Loading...</div>; // or any other appropriate loading state
-  }
-  if (session) {
-    return (
-      <div className="bg-blue-900 min-h-screen flex">
-        <Nav />
-        <div
-          className="bg-white text-black 
-                        flex-grow 
-                        mt-2 mr-2 mb-2 p-4 
-                        rounded-lg"
-        >
-          Logged in as {session.user.email}
-        </div>
-        {/* <button type="button" onClick={() => signOut()}>
-          Sign out
-        </button> */}
-      </div>
-    );
-  }
+  console.log({ session });
   return (
-    <>
-      Not signed in <br />
-      <div className="bg-blue-900 w-screen h-screen flex items-center">
-        <div className="text-center w-full">
-          <button
-            type="button"
-            className="bg-white p-2 rounded-lg text-black"
-            onClick={() => signIn("google")}
-          >
-            Login with Google
-          </button>
+    <Layout>
+      <div className="text-blue-900 flex justify-between">
+        <h2>
+          Hello, <b>{session?.user?.name}</b>
+        </h2>
+        <div className="flex bg-gray-300 text-black gap-1 rounded-lg overflow-hidden">
+          <Image src={session?.user?.image} alt="" className="w-6 h-6 " />
+          <span className="px-2">{session?.user?.name}</span>
         </div>
+
+        <button type="button" onClick={signOut}>
+          Sign out
+        </button>
       </div>
-    </>
+    </Layout>
   );
 }
